@@ -10,10 +10,7 @@ router.get('/', async (req,res)=>{
     res.render('./signin/signin')
 })
 router.post('/',async (req,res,next)=>{
-    console.log(req.body.email)
-    const userdoc =await user.findOne({'email': req.body.email})
-     if((userdoc.email != req.body.email&& (userdoc.email!=null)) || req.body.password === req.body.password2){ 
-            try {
+   async function write(){ try {
                 const password= await bcrypt.hash(req.body.password, saltRounds);
                 const User = new user(
                 {
@@ -22,6 +19,7 @@ router.post('/',async (req,res,next)=>{
                  birthDate: req.body.birthdate,
                  pass:password
                 })
+                console.log(User)
                 await User.save()
              return res.render('index1')
           
@@ -29,11 +27,22 @@ router.post('/',async (req,res,next)=>{
                 catch (error) {
                      res.render('signin/signin', {
                      errorMessage:' Invalid username or password !!!'
-            });
-        }
+            })
+            console.error(error)
+        }}
+        
+    const userdoc =await user.findOne({'email': req.body.email})
+    if(userdoc!=null){
+     if(userdoc.email != req.body.email && req.body.password === req.body.password2){ 
+        console.log(userdoc.email)
+        write() 
         }
         else{
             res.status(400).send('error')
+        }}
+        else{
+            console.log(userdoc)
+            write()
         }
 })
 
