@@ -33,7 +33,7 @@ router.post('/',async (req,res,next)=>{
         
     const userdoc =await user.findOne({'email': req.body.email})
     if(userdoc!=null){
-     if(userdoc.email != req.body.email && req.body.password === req.body.password2){ 
+     if(userdoc.email != req.body.email && (req.body.password === req.body.password2)){ 
         console.log(userdoc.email)
         write() 
         }
