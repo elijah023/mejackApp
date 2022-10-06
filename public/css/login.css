@@ -1,0 +1,59 @@
+body{
+    background-image: url('/images/image1.png');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#main--container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    box-shadow: 0 5px 7px 0 rgba(128, 128, 128, 0.301), 0 5px 7px 0 rgba(128, 128, 128, 0.201) ;
+    background-color: rgba(255, 255, 255, 0.322);
+    height: 100%;
+    border-radius: 25px;
+     margin-top: 10%;
+}
+#main--container label{
+    font-size: large;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#main--container input{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid blue;
+    background-color: rgba(0, 255, 255, 0.418);
+    box-shadow: 0 5px 7px 0 rgba(128, 128, 128, 0.301), 0 5px 7px 0 rgba(128, 128, 128, 0.201) ;
+    border-radius: 25px;
+    margin: 5px;
+font-size: large;
+}
+#main--container a{
+    touch-action: none;
+    text-decoration: none;
+    color: blue;
+    font-size: large;
+    
+}
+#main--container span{
+    font-size: x-large;
+    font-weight: 700;
+
+}
+
+.changePage{
+    border: 1px solid blue;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+@media (max-width:600px) {
+    #main--container{
+        margin-top: 20%;
+    }
+}

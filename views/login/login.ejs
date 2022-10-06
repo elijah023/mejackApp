@@ -1,0 +1,16 @@
+
+        <form id="form--container" action="/login" method="post">
+            <label for="Username">Name: </label><br>
+            <input type="text" name="name" required autofocus>
+            <br>
+            <label for="password">Password: </label><br>
+            <input type="password" name="password" required id="password" >
+            <br>
+            <input class="btn" type="submit" value="LOGIN">
+            <br>
+            
+           <br>
+            <a href="/signin" class="changePage">SIGNUP </a><span> or   </span> <i class="fa fa-google-plus-square"><a href="/login"> GOOGLE </a> </i>
+        </form>
+
+        <%- include('../layouts/partials/error.ejs') %>
