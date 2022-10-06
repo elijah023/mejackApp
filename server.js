@@ -6,8 +6,8 @@ const parser=require('body-parser')
 const ejsLayouts = require('express-ejs-layouts')
 const app=express()
 
-const loginRouter =require('./routes/login/login')
-const signinRouter =require('./routes/signup/signin')
+const loginRouter =require('./routes/auth/login')
+const signinRouter =require('./routes/auth/signin')
 const db =require('./db')
 
 dotenv.config('.env')
@@ -23,8 +23,8 @@ app.use('public', express.static(__dirname+'/public'))
 app.use('/css', express.static(__dirname+'/public/css'))
 app.use('/website', express.static(__dirname+'/public/websites'))
 app.use('/images', express.static(__dirname+'/public/images'))
-app.use('/login', loginRouter)
-app.use('/signin', signinRouter)
+app.use('/auth/login', loginRouter)
+app.use('/auth/signin', signinRouter)
 
 
 app.get('/',(req,res)=>{

@@ -1,5 +1,5 @@
 
-        <form id="form--container" action="/login" method="post">
+        <form id="form--container" action="/auth/login" method="post">
             <label for="Username">Name: </label><br>
             <input type="text" name="name" required autofocus>
             <br>
@@ -10,7 +10,7 @@
             <br>
             
            <br>
-            <a href="/signin" class="changePage">SIGNUP </a><span> or   </span> <i class="fa fa-google-plus-square"><a href="/login"> GOOGLE </a> </i>
+            <a href="/auth/signin" class="changePage">SIGNUP </a><span> or   </span> <i class="fa fa-google-plus-square"><a href="/login"> GOOGLE </a> </i>
         </form>
 
         <%- include('../layouts/partials/error.ejs') %>

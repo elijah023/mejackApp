@@ -5,9 +5,9 @@ dotenv.config('.env')
  //
  const Connect = async () =>{
     try {
-        const conn0= await new sequelize('postgres://postgres:Blak_sarac3ns@localhost:5432/users')
-        conn0.authenticate();
-        console.log(`successful database connection `)
+        //const conn0= await new sequelize('postgres://postgres:Blak_sarac3ns@localhost:5432/users')
+        //conn0.authenticate();
+       // console.log(`successful database connection `)
         const conn1 = await new mongoose.connect(process.env.URI,
             {
                 useNewUrlParser: true,
